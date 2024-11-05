@@ -29,7 +29,9 @@ Learn more at - https://docs.snowflake.com/en/user-guide/security-row-intro
 -- Set variables
 ---------------------------------
 SET db_name = 'demo_rla';
+
 SET schema_name = 'raw';
+
 SET myuser_name = 'admin';
 
 
@@ -37,7 +39,9 @@ SET myuser_name = 'admin';
 -- Create Database and Schema
 ---------------------------------
 use role sysadmin;
+
 create or replace database IDENTIFIER($db_name);
+
 create or replace schema IDENTIFIER($schema_name);
 
 
@@ -45,6 +49,7 @@ create or replace schema IDENTIFIER($schema_name);
 -- Specify Database and Schema to Use
 --------------------------------------
 use database IDENTIFIER($db_name);
+
 use schema IDENTIFIER($schema_name);
 
 
