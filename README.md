@@ -84,8 +84,11 @@ grant select on all tables in schema IDENTIFIER($schema_name) to role securityad
 -- Create roles, one per department
 -----------------------------------
 use role useradmin;
+
 create or replace role demo_rla_business_ro;
+
 create or replace role demo_rla_engineering_ro;
+
 create or replace role demo_rla_chemistry_ro;
 
 
