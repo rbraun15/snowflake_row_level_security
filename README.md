@@ -1,12 +1,15 @@
-# Snowflake row_level_security
+# Snowflake Row Level Security - Simple Example
+
 Use row access policies to limit the rows as user can see.
 
-Run the commands in the file demo_row_level_access.sql to see a simple example of a Row Access Policy in action.
+Run the commands in the file **demo_row_level_access.sql** to see a simple example of a Row Access Policy in action.
 
 This example limits the departments a user can see base on the Snowflake role they are using.
 
+&nbsp;<br>
 
-Included:
+
+**Included:**
 - Object Creation - DB, Schema, Table
 - Sample data insert statements
 - Role creation
@@ -16,5 +19,3 @@ Included:
 - Clean up/reset of environment
 
 Learn more at - https://docs.snowflake.com/en/user-guide/security-row-intro
-
-
