@@ -65,7 +65,10 @@ create or replace TABLE STUDENTS_MAJOR (
 ---------------------------------
 -- Insert sample data
 ---------------------------------
-INSERT INTO STUDENTS_MAJOR (STUDENT_NAME, MAJOR) VALUES
+INSERT INTO STUDENTS_MAJOR (STUDENT_NAME, MAJOR) 
+
+VALUES
+
 ('Alice Johnson', 'Engineering'),
 ('Diana Prince', 'Engineering'),
 ('Bob Smith', 'Business'),
@@ -81,7 +84,9 @@ INSERT INTO STUDENTS_MAJOR (STUDENT_NAME, MAJOR) VALUES
 -- Grant usage on db to securityadmin so they can grant permissions
 --------------------------------------------------------------------
 grant usage on database IDENTIFIER($db_name) to role securityadmin;
+
 grant usage on schema IDENTIFIER($schema_name) to role securityadmin;
+
 grant select on all tables in schema IDENTIFIER($schema_name) to role securityadmin;
 
 
@@ -104,12 +109,17 @@ create or replace role demo_rla_chemistry_ro;
 SET role_name = 'demo_rla_business_ro';
 
 use role securityadmin;
+
 grant usage on database IDENTIFIER($db_name) to role IDENTIFIER($role_name);
+
 GRANT SELECT ON  STUDENTS_MAJOR  to ROLE IDENTIFIER($role_name);
+
 grant usage on schema IDENTIFIER($schema_name) to ROLE IDENTIFIER($role_name);
+
 grant role IDENTIFIER($role_name) to user IDENTIFIER($myuser_name);
 
 use role IDENTIFIER($role_name);
+
 select * from STUDENTS_MAJOR order by MAJOR;
 
 
@@ -120,12 +130,18 @@ select * from STUDENTS_MAJOR order by MAJOR;
 SET role_name = 'demo_rla_engineering_ro';
 
 use role securityadmin;
+
 grant usage on database IDENTIFIER($db_name) to role IDENTIFIER($role_name);
+
 GRANT SELECT ON  STUDENTS_MAJOR  to ROLE IDENTIFIER($role_name);
+
 grant usage on schema IDENTIFIER($schema_name) to ROLE IDENTIFIER($role_name);
+
 grant role IDENTIFIER($role_name) to user IDENTIFIER($myuser_name);
 
+
 use role IDENTIFIER($role_name);
+
 select * from STUDENTS_MAJOR order by MAJOR;
 
 
@@ -137,12 +153,18 @@ select * from STUDENTS_MAJOR order by MAJOR;
 SET role_name = 'demo_rla_chemistry_ro';
 
 use role securityadmin;
+
 grant usage on database IDENTIFIER($db_name) to role IDENTIFIER($role_name);
+
 GRANT SELECT ON  STUDENTS_MAJOR  to ROLE IDENTIFIER($role_name);
+
 grant usage on schema IDENTIFIER($schema_name) to ROLE IDENTIFIER($role_name);
+
 grant role IDENTIFIER($role_name) to user IDENTIFIER($myuser_name);
 
+
 use role IDENTIFIER($role_name);
+
 select * from STUDENTS_MAJOR order by MAJOR;
  
   
