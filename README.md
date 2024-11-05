@@ -199,21 +199,25 @@ ADD ROW ACCESS POLICY STUDENTS_MAJOR_ROW_ACCESS_POLICY ON (MAJOR);
 --  See only Business records
 ------------------------------
 use role demo_rla_business_ro;
+
 select * from STUDENTS_MAJOR order by MAJOR;
 
 --  Sees only Engineering records 
 --------------------------------
 use role demo_rla_engineering_ro;
+
 select * from STUDENTS_MAJOR order by MAJOR;
 
 --  Sees only Chemistry records
 -------------------------------
 use role demo_rla_chemistry_ro;
+
 select * from STUDENTS_MAJOR order by MAJOR;
 
 --  Sees all MAJORS and records
 -------------------------------
 use role accountadmin;
+
 select * from STUDENTS_MAJOR order by MAJOR;
 
 
@@ -222,10 +226,14 @@ select * from STUDENTS_MAJOR order by MAJOR;
 ------------------------------------------------
 
 use role useradmin;
+
 drop role demo_rla_business_ro;
+
 drop role demo_rla_engineering_ro;
+
 drop role demo_rla_chemistry_ro;
 
 use role sysadmin;
+
 drop database IDENTIFIER($db_name);
 
